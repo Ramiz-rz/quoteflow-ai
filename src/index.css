@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #121318;
+  --color-surface-dim: #121318;
+  --color-surface-bright: #38393f;
+  --color-surface-container-lowest: #0d0e13;
+  --color-surface-container-low: #1a1b21;
+  --color-surface-container: #1e1f25;
+  --color-surface-container-high: #292a2f;
+  --color-surface-container-highest: #34343a;
+  --color-on-surface: #e3e1e9;
+  --color-on-surface-variant: #c7c4d7;
+  --color-inverse-surface: #e3e1e9;
+  --color-inverse-on-surface: #2f3036;
+  --color-outline: #908fa0;
+  --color-outline-variant: #464554;
+  --color-surface-tint: #c0c1ff;
+  --color-primary: #c0c1ff;
+  --color-on-primary: #1000a9;
+  --color-primary-container: #8083ff;
+  --color-on-primary-container: #0d0096;
+  --color-inverse-primary: #494bd6;
+  --color-secondary: #d0bcff;
+  --color-on-secondary: #3c0091;
+  --color-secondary-container: #571bc1;
+  --color-on-secondary-container: #c4abff;
+  --color-tertiary: #4cd7f6;
+  --color-on-tertiary: #003640;
+  --color-tertiary-container: #009eb9;
+  --color-on-tertiary-container: #002f38;
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+  --color-background: #121318;
+  --color-on-background: #e3e1e9;
+  --color-surface-variant: #34343a;
+
+  --font-headline-lg: Geist, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-headline-xl: Geist, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-headline-sm: Geist, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-headline-md: Geist, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body-lg: Geist, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body-md: Geist, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body-sm: Geist, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-code-md: "JetBrains Mono", monospace;
+  --font-label-md: "JetBrains Mono", monospace;
+  --font-label-sm: "JetBrains Mono", monospace;
+
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2.5rem;
+  --spacing-gutter: 1.5rem;
+  --spacing-gutter-sm: 0.75rem;
+  --spacing-margin: 2rem;
+  --spacing-margin-mobile: 1rem;
+}
+
+/* Material Symbols configuration */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-outlined.fill,
+.material-symbols-outlined[data-weight="fill"] {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Custom glow effects from design system */
+.glow-indigo {
+  box-shadow: 0 0 30px -5px rgba(99, 102, 241, 0.25);
+}
+
+.glow-subtle {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.45);
+}
+
+/* Hide scrollbars cleanly */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Print styles for A4 sheet export */
+@page {
+  size: A4 portrait;
+  margin: 10mm 12mm;
+}
+
+@media screen {
+  .print-only {
+    display: none !important;
+  }
+}
+
+@media print {
+  html, body {
+    background: #ffffff !important;
+    color: #11131a !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide app chrome, floating bars, and interactive controls */
+  .no-print,
+  header,
+  nav,
+  aside,
+  button,
+  .toast-container,
+  #toast-notification,
+  .bottom-dock {
+    display: none !important;
+  }
+
+  /* Allow print-only wrapper to show when printing */
+  .print-only {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Printable proposal sheet resets for physical paper */
+  .printable-proposal-sheet {
+    display: block !important;
+    background: #ffffff !important;
+    color: #11131a !important;
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    page-break-inside: avoid;
+  }
+
+  /* Table readability in print */
+  table {
+    page-break-inside: auto;
+  }
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  thead {
+    display: table-header-group;
+  }
+}

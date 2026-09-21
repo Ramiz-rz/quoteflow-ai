@@ -1,0 +1,6 @@
+{
+  "name": "QuoteFlow AI",
+  "description": "Turn messy client messages into professional scopes, pricing breakdowns, and signature-ready quotes in seconds.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
